@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Destroyer : MonoBehaviour
 {
@@ -37,7 +38,9 @@ public class Destroyer : MonoBehaviour
         }
         else
         {
-                Destroy(other.gameObject);   
+            Destroy(other.gameObject);
+            SceneManager.LoadScene(5);
+                
         }
     }
 }
