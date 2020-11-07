@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 7933040894456471267}
   - component: {fileID: 7933040894456471266}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Rogue
   m_TagString: Rogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,8 +519,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000030014251, y: -0.006506986}
-  m_Size: {x: 0.13972235, y: 0.14728893}
+  m_Offset: {x: -0.0073159537, y: -0.040994644}
+  m_Size: {x: 0.06686444, y: 0.07831362}
   m_Direction: 0
 --- !u!114 &7933040894456471267
 MonoBehaviour:
