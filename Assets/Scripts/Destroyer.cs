@@ -17,6 +17,7 @@ public class Destroyer : MonoBehaviour
 
     }
 
+
     void OnCollisionEnter2D(Collision2D other)
     {
         // Object reference not set to an instance of an object DestroyByContact.OnCollisionEnter2D
@@ -26,9 +27,17 @@ public class Destroyer : MonoBehaviour
         {
             //do not destroy ground
         }
+        else if (other.gameObject.CompareTag("Knight") && Input.GetAxis("Jump") > 0)
+        {
+            //do not destroy player
+        }
+        else if (other.gameObject.CompareTag("Rogue") && Input.GetAxis("Jump") > 0)
+        {
+            //do not destroy player
+        }
         else
         {
-            Destroy(other.gameObject);
+                Destroy(other.gameObject);   
         }
     }
 }
