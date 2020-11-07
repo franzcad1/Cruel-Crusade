@@ -59,7 +59,7 @@
     <Compile Include="Assets\Scripts\MoveAlongY.cs" />
     <Compile Include="Assets\Scripts\Destroyer.cs" />
     <Compile Include="Assets\Scripts\MoveAlongX.cs" />
-    <Compile Include="Assets\Scripts\MoveTowardsObject.cs" />
+    <Compile Include="Assets\Scripts\MoveTowardsObject(nonfunctional).cs" />
     <Compile Include="Assets\Scripts\MovePatrol.cs" />
     <Compile Include="Assets\Scripts\FaceMouse.cs" />
     <Compile Include="Assets\Scripts\ProjectileRight.cs" />
@@ -68,8 +68,11 @@
     <Compile Include="Assets\Assets\CyberPunk_Blonde\Sprites\Egypt_Gladiators\Scripts\GladiatorController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\MovePatrolCounter.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Assets\Demons\PTSD Demon Pack\PTSDDemon-ReadMe.txt" />
+     <None Include="Assets\Assets\Demons\PTSD Demon Pack\PTSDDemonSymbolism.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.5f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

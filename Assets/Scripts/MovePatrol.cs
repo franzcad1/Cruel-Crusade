@@ -5,8 +5,8 @@ using UnityEngine;
 public class MovePatrol : MonoBehaviour
 {
     // "Public" variables
-    [SerializeField] private bool dirUp = true;
-    [SerializeField] private bool dirRight = true;
+    private bool dirUp = true;
+    private bool dirRight = true;
     [SerializeField] private float speed = 2.0f;
     [SerializeField] private float distance = 4.0f;
     private float initialx;
