@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 95433171631264737}
   - component: {fileID: 95433171631264739}
   - component: {fileID: 95433171631264748}
-  - component: {fileID: 2772573305542292602}
+  - component: {fileID: 2346251357511963437}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Knight
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
---- !u!95 &2772573305542292602
+--- !u!95 &2346251357511963437
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95433171631264743}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 38e07501bb6a4b546b791b83a6d9dd8c, type: 2}
   m_CullingMode: 0
