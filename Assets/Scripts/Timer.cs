@@ -14,8 +14,9 @@ public class Timer : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(gameHUD);
-        startTime = Time.timeSinceLevelLoad;
+        startTime = Time.deltaTime;
     }
+
 
     // Update is called once per frame
     void Update()
