@@ -61,6 +61,12 @@ public class PlayerController : MonoBehaviour
             //stop movement
             rBody.velocity = new Vector2(horiz * 0, verti * 0);
         }
+
+        else if(gameObject.CompareTag("Barbarian") && Input.GetAxis("Jump") > 0)
+        {
+            //******Probitional condition just to make sure code enters this else if statement*****
+            rBody.velocity = new Vector2(horiz * 0, verti * 0);
+        }
         else if(gameObject.CompareTag("Rogue") && Input.GetAxis("Jump") > 0 /*&& coolDown*/)
         {
             if(coolDown==true && counterCoolDown < 130) //logic to cool down the use of the roll
@@ -80,8 +86,17 @@ public class PlayerController : MonoBehaviour
         else
         rBody.velocity = new Vector2(horiz * speed, verti * speed);
 
+        if(Input.GetMouseButtonDown(0))
+        {
+            anim.SetBool("Attack", true);
+        }
+        else
+            anim.SetBool("Attack", false);
+
+
         //cominucate with animator
         anim.SetFloat("xVelocity",(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
+        
     }
 }
