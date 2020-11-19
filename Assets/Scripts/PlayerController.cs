@@ -97,10 +97,11 @@ public class PlayerController : MonoBehaviour
             rBody.constraints = RigidbodyConstraints2D.None; // unfreeze position and start moving after shield
             rBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-        
-        
+
+
 
         //cominucate with animator
+        anim.logWarnings = false;
         anim.SetFloat("xVelocity",(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
         anim.SetBool("Attack", Input.GetMouseButtonDown(0));

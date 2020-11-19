@@ -32,6 +32,10 @@ public class ThiefController : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Rogue");
         }
+        else if (GameObject.FindGameObjectWithTag("Barbarian") != null)
+        {
+            player = GameObject.FindGameObjectWithTag("Barbarian");
+        }
     }
 
     //Physics
@@ -60,7 +64,7 @@ public class ThiefController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Knight" || collision.gameObject.tag == "Rogue")
+        if (collision.gameObject.tag == "Knight" || collision.gameObject.tag == "Rogue" || collision.gameObject.tag == "Barbarian")
         {
             playerInRange = true;
         }
@@ -68,7 +72,7 @@ public class ThiefController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Knight" || collision.gameObject.tag == "Rogue")
+        if (collision.gameObject.tag == "Knight" || collision.gameObject.tag == "Rogue" || collision.gameObject.tag == "Barbarian")
         {
             playerInRange = false;
         }

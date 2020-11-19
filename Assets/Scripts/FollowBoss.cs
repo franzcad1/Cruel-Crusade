@@ -17,6 +17,11 @@ public class FollowBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (boss != GameObject.FindGameObjectWithTag("Boss"))
+        {
+            boss = GameObject.FindGameObjectWithTag("Boss");
+            boss.GetComponent<Transform>();
+        }
         faceBoss();
     }
 
@@ -31,6 +36,19 @@ public class FollowBoss : MonoBehaviour
         transform.up = direction;
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        boss = GameObject.FindGameObjectWithTag("Boss");
+        boss.GetComponent<Transform>();
+    }
 }

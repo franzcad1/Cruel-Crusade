@@ -17,7 +17,7 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         characterSelection = GameObject.Find("CharacterSelection");
-       
+        
 
         if (characterSelection.GetComponent<CharacterSelection>().characterChoice == "rogue")
         {
