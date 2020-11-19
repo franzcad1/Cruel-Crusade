@@ -9,6 +9,7 @@ TagManager:
   - Knight
   - Rogue
   - Barbarian
+  - Boss
   layers:
   - Default
   - TransparentFX

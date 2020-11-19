@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         DontDestroyOnLoad(gameHUD);
-        startTime = Time.deltaTime;
+        startTime = Time.timeSinceLevelLoad;
     }
 
 

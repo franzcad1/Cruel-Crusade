@@ -7,7 +7,7 @@ public class ThiefController : MonoBehaviour
     // "Public" variables
 
     //[SerializeField] private bool dirRight = true;
-    [SerializeField] private float speed = 2.0f;
+    [SerializeField] private float speed = 0.1f;
     //[SerializeField] private float distance = 4.0f;
     private float initialx;
     [SerializeField] private bool playerInRange = false;

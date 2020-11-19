@@ -46,4 +46,5 @@ MonoBehaviour:
   knight: {fileID: 95433171631264743, guid: f6fa1724449dc764d97d7bd796ff0b01, type: 3}
   rogue: {fileID: 7933040894456471272, guid: f52add6d0d5356f4791e7b4f7006fcea, type: 3}
   characterSelection: {fileID: 0}
+  barbarian: {fileID: 5423492767079896765, guid: 45a60b0b1e0f67e4ca24b96d0e653ecf, type: 3}
   cinemachine: {fileID: 0}
