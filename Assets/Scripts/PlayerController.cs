@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private float initPos = 0.0f;
     private float finPos = 0.0f;
     private bool coolDown=true;
+    private bool roll = false;
     private int counterCoolDown = 100;
 
 
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             counterCoolDown = 0;
             coolDown = false;
+            roll = false;
         }
         else
         {
@@ -74,29 +76,27 @@ public class PlayerController : MonoBehaviour
                 //do not destroy player
                 //move quickly towards current direction
                 rBody.velocity = new Vector2(horiz * (speed * 2), verti * (speed * 2));
-                //haciendo la logica de coolDown con conatdor cada que pase el codio por fixedUpdate
+                roll = true;
             }
             else
             {
                 rBody.velocity = new Vector2(horiz * speed, verti * speed);
                 coolDown = false;
+                roll = false;
+
             }
            
         }
         else
         rBody.velocity = new Vector2(horiz * speed, verti * speed);
-
-        if(Input.GetMouseButtonDown(0))
-        {
-            anim.SetBool("Attack", true);
-        }
-        else
-            anim.SetBool("Attack", false);
-
+        
 
         //cominucate with animator
         anim.SetFloat("xVelocity",(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
-        
+        anim.SetBool("Attack", Input.GetMouseButtonDown(0));
+        //anim.SetFloat("Roll", Input.GetAxis("Jump"));
+        anim.SetBool("Roll", roll);
+
     }
 }
