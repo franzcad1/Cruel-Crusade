@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float finPos = 0.0f;
     private bool coolDown=true;
     private bool roll = false;
+    private bool shield = false;
     private int counterCoolDown = 100;
 
 
@@ -39,8 +40,8 @@ public class PlayerController : MonoBehaviour
     {
        float horiz = Input.GetAxis("Horizontal");
        float verti = Input.GetAxis("Vertical");
-        
-        if (counterCoolDown > 100 && coolDown==false)
+        ///////////////////////////////////////////////cool down rutine
+        if (counterCoolDown >= 100 && coolDown==false)
         {
             coolDown = true;
 
@@ -55,13 +56,15 @@ public class PlayerController : MonoBehaviour
         {
             counterCoolDown++;
         }
-
+        ///////////////////////////////////////////////
 
         if (gameObject.CompareTag("Knight") && Input.GetAxis("Jump") > 0)
         {
             //do not destroy player
             //stop movement
             rBody.velocity = new Vector2(horiz * 0, verti * 0);
+            rBody.constraints = RigidbodyConstraints2D.FreezeAll; //so the enemy don´t drag player around
+            shield = true;
         }
 
         else if(gameObject.CompareTag("Barbarian") && Input.GetAxis("Jump") > 0)
@@ -88,7 +91,13 @@ public class PlayerController : MonoBehaviour
            
         }
         else
-        rBody.velocity = new Vector2(horiz * speed, verti * speed);
+        {
+            rBody.velocity = new Vector2(horiz * speed, verti * speed);
+            shield = false;
+            rBody.constraints = RigidbodyConstraints2D.None; // unfreeze position and start moving after shield
+            rBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        
         
 
         //cominucate with animator
@@ -97,6 +106,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Attack", Input.GetMouseButtonDown(0));
         //anim.SetFloat("Roll", Input.GetAxis("Jump"));
         anim.SetBool("Roll", roll);
+        anim.SetBool("Shield", shield);
 
     }
 }
