@@ -57,17 +57,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Buttons\PlayButton.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
-    <Compile Include="Assets\Scripts\ThiefController.cs" />
+    <Compile Include="Assets\Scripts\Chaser.cs" />
     <Compile Include="Assets\Scripts\MoveAlongY.cs" />
     <Compile Include="Assets\Scripts\Destroyer.cs" />
     <Compile Include="Assets\Scripts\MoveAlongX.cs" />
-    <Compile Include="Assets\Scripts\ButtonSelection.cs" />
-    <Compile Include="Assets\Scripts\MoveTowardsObject(nonfunctional).cs" />
     <Compile Include="Assets\Scripts\EndGoal.cs" />
     <Compile Include="Assets\Scripts\MovePatrol.cs" />
     <Compile Include="Assets\Scripts\FaceMouse.cs" />
     <Compile Include="Assets\Scripts\CharacterSelection.cs" />
-    <Compile Include="Assets\Scripts\ProjectileRight.cs" />
     <Compile Include="Assets\Assets\CyberPunk_Blonde\Sprites\Egypt_Gladiators\Scripts\Break.cs" />
     <Compile Include="Assets\Scripts\Attack.cs" />
     <Compile Include="Assets\Assets\CyberPunk_Blonde\Sprites\Egypt_Gladiators\Scripts\GladiatorController.cs" />
@@ -76,9 +73,10 @@
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Buttons\ButtonSelection.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
-    <Compile Include="Assets\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scripts\MovePatrolCounter.cs" />
     <Compile Include="Assets\Scripts\FollowBoss.cs" />
+    <Compile Include="Assets\Scripts\Shoot.cs" />
+    <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Fonts\obsidianblade.txt" />
