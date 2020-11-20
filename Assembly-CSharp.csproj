@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
     <Compile Include="Assets\Scripts\ShieldUp.cs" />
+    <Compile Include="Assets\Scripts\AOE.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Fonts\obsidianblade.txt" />

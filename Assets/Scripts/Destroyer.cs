@@ -36,6 +36,10 @@ public class Destroyer : MonoBehaviour
         {
             //do not destroy player
         }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            //no enemy friendlyfire
+        }
         else
         {
             Destroy(other.gameObject);

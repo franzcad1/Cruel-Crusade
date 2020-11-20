@@ -5,19 +5,17 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject projectileP;
+    [SerializeField] private GameObject projectileP;
     [SerializeField] private GameObject player;
     [SerializeField] private bool playerInRange = false;
 
-    public float speed = 20f;
-    public float reloadtime = 5f;
+    public float speed = 5f;
+    public float reloadtime = 2f;
 
     private Rigidbody2D rBody;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Fire", reloadtime, reloadtime);
-
         rBody = GetComponent<Rigidbody2D>();
         if (GameObject.FindGameObjectWithTag("Knight") != null)
         {
@@ -40,7 +38,12 @@ public class Shoot : MonoBehaviour
         {
             //gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed);
             //need to face player when firing
-            firePoint.transform.LookAt(player.transform.position);
+            //firePoint.LookAt(player.transform);
+            //firePoint.transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, player.transform.position - firePoint.position, 100f, 0.0f));
+            Vector2 direction = (Vector2)player.transform.position - (Vector2)transform.position;
+            direction.Normalize();
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            firePoint.rotation = Quaternion.Euler(Vector3.forward * (angle));
         }
     }
 
@@ -48,8 +51,8 @@ public class Shoot : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectileP, firePoint.position, firePoint.rotation);
         Rigidbody2D p = projectile.GetComponent<Rigidbody2D>();
-        p.AddForce(firePoint.right * speed, ForceMode2D.Impulse);
-
+        Vector3 target = (player.transform.position - firePoint.position).normalized * speed;
+        p.velocity = (new Vector3(target.x, target.y, 0.0f));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +60,8 @@ public class Shoot : MonoBehaviour
         if (collision.gameObject.tag == "Knight" || collision.gameObject.tag == "Rogue" || collision.gameObject.tag == "Barbarian")
         {
             playerInRange = true;
+
+            InvokeRepeating("Fire", reloadtime, reloadtime);
         }
     }
 
@@ -65,6 +70,8 @@ public class Shoot : MonoBehaviour
         if (collision.gameObject.tag == "Knight" || collision.gameObject.tag == "Rogue" || collision.gameObject.tag == "Barbarian")
         {
             playerInRange = false;
+            CancelInvoke("Fire");
+
         }
     }
 }

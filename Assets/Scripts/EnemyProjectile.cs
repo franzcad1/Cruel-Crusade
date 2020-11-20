@@ -16,8 +16,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         
     }
-
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Walls"))
         {
@@ -26,21 +25,23 @@ public class EnemyProjectile : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Knight") && Input.GetAxis("Jump") > 0)
         {
-            //do not destroy player
+            //do not destroy player, destroy this object
+            Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Rogue") && Input.GetAxis("Jump") > 0)
         {
-            //do not destroy player
+            //do not destroy player, destroy this object
+            Destroy(gameObject);
         }
-        else if (other.gameObject.CompareTag("Enemy"))
+        //else if (other.gameObject.CompareTag("Enemy"))
+        //{
+        //    //no enemy friendly fire, destroy this object
+        //    Destroy(gameObject);
+        //}
+        else if (other.gameObject.CompareTag("Rogue") || other.gameObject.CompareTag("Knight") || other.gameObject.CompareTag("Barbarian"))
         {
-            //no enemy friendly fire
-        }
-        else
-        {
-            //somehow triggered while hitting enemies - enemy friendly fire
             Destroy(other.gameObject);
-            //SceneManager.LoadScene(5);
+            SceneManager.LoadScene(5);
             Destroy(gameObject);
         }
     }

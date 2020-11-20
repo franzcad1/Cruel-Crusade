@@ -6,6 +6,8 @@ public class Attack : MonoBehaviour
 {
    
     private bool hasEnemy = false;
+    [SerializeField] private GameObject enemy;
+
     void Start()
     {
         
@@ -14,39 +16,31 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (enemy != null && Input.GetMouseButtonDown(0))
+        {
+            Destroy(enemy);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-            hasEnemy = true;
-
-        if(hasEnemy && Input.GetMouseButtonDown(0))
+        if (collision.gameObject.CompareTag("Enemy") && !collision.isTrigger)
         {
-            if(Input.GetAxis("Jump") > 0)
-            {
-                ////Temporary Don´t destroy while Knight is in Shield 
-                /////to be replaced with 75% less damage rutine
-                
-            }
-            else
-            Destroy(collision.gameObject);
+            enemy = collision.gameObject;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-            hasEnemy = true;
-        if (hasEnemy && Input.GetMouseButtonDown(0))
+        if (collision.gameObject.CompareTag("Enemy") && !collision.isTrigger)
         {
-            Destroy(collision.gameObject);
+            enemy = collision.gameObject;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-            hasEnemy = false;
+        if (collision.gameObject.CompareTag("Enemy") && !collision.isTrigger)
+        {
+            enemy = null;
+        }
     }
-  
 }
