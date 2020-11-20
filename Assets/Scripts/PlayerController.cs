@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private float initPos = 0.0f;
     private float finPos = 0.0f;
     private bool coolDown=true;
+    private bool roll = false;
+    private bool shield = false;
     private int counterCoolDown = 100;
 
 
@@ -38,8 +40,8 @@ public class PlayerController : MonoBehaviour
     {
        float horiz = Input.GetAxis("Horizontal");
        float verti = Input.GetAxis("Vertical");
-        
-        if (counterCoolDown > 100 && coolDown==false)
+        ///////////////////////////////////////////////cool down rutine
+        if (counterCoolDown >= 100 && coolDown==false)
         {
             coolDown = true;
 
@@ -48,17 +50,26 @@ public class PlayerController : MonoBehaviour
         {
             counterCoolDown = 0;
             coolDown = false;
+            roll = false;
         }
         else
         {
             counterCoolDown++;
         }
-
+        ///////////////////////////////////////////////
 
         if (gameObject.CompareTag("Knight") && Input.GetAxis("Jump") > 0)
         {
             //do not destroy player
             //stop movement
+            rBody.velocity = new Vector2(horiz * 0, verti * 0);
+            rBody.constraints = RigidbodyConstraints2D.FreezeAll; //so the enemy don´t drag player around
+            shield = true;
+        }
+
+        else if(gameObject.CompareTag("Barbarian") && Input.GetAxis("Jump") > 0)
+        {
+            //******Probitional condition just to make sure code enters this else if statement*****
             rBody.velocity = new Vector2(horiz * 0, verti * 0);
         }
         else if(gameObject.CompareTag("Rogue") && Input.GetAxis("Jump") > 0 /*&& coolDown*/)
@@ -68,20 +79,35 @@ public class PlayerController : MonoBehaviour
                 //do not destroy player
                 //move quickly towards current direction
                 rBody.velocity = new Vector2(horiz * (speed * 2), verti * (speed * 2));
-                //haciendo la logica de coolDown con conatdor cada que pase el codio por fixedUpdate
+                roll = true;
             }
             else
             {
                 rBody.velocity = new Vector2(horiz * speed, verti * speed);
                 coolDown = false;
+                roll = false;
+
             }
            
         }
         else
-        rBody.velocity = new Vector2(horiz * speed, verti * speed);
+        {
+            rBody.velocity = new Vector2(horiz * speed, verti * speed);
+            shield = false;
+            rBody.constraints = RigidbodyConstraints2D.None; // unfreeze position and start moving after shield
+            rBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+
+
 
         //cominucate with animator
+        anim.logWarnings = false;
         anim.SetFloat("xVelocity",(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
+        anim.SetBool("Attack", Input.GetMouseButtonDown(0));
+        //anim.SetFloat("Roll", Input.GetAxis("Jump"));
+        anim.SetBool("Roll", roll);
+        anim.SetBool("Shield", shield);
+
     }
 }

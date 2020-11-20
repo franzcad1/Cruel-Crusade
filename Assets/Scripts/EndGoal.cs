@@ -19,7 +19,7 @@ public class EndGoal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Knight" || collision.tag == "Rogue")
+        if (collision.tag == "Knight" || collision.tag == "Rogue" || collision.tag ==  "Barbarian")
         {
             if (SceneManager.GetActiveScene().buildIndex + 1 < 5)
             {

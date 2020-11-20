@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+   
     private bool hasEnemy = false;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -23,6 +24,13 @@ public class Attack : MonoBehaviour
 
         if(hasEnemy && Input.GetMouseButtonDown(0))
         {
+            if(Input.GetAxis("Jump") > 0)
+            {
+                ////Temporary Don´t destroy while Knight is in Shield 
+                /////to be replaced with 75% less damage rutine
+                
+            }
+            else
             Destroy(collision.gameObject);
         }
     }

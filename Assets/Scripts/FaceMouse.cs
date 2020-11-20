@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FaceMouse : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +28,6 @@ public class FaceMouse : MonoBehaviour
             );
 
         transform.up = direction;
+
     }
 }

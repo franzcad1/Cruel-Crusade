@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Knight
   - Rogue
+  - Barbarian
+  - Boss
   layers:
   - Default
   - TransparentFX
