@@ -39,7 +39,8 @@ public class Shoot : MonoBehaviour
         if (playerInRange)
         {
             //gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed);
-            transform.LookAt(player.transform.position);
+            //need to face player when firing
+            firePoint.transform.LookAt(player.transform.position);
         }
     }
 

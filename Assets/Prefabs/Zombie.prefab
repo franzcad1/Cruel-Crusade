@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5145221030280541553}
   - component: {fileID: 3728633220038323681}
   - component: {fileID: 5068845644966644379}
+  - component: {fileID: 6216179732492765605}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -121,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.2, y: 0.2}
+  m_Offset: {x: -0.016850313, y: -0.08855629}
+  m_Size: {x: 0.2876215, y: 0.5388756}
   m_Direction: 0
 --- !u!114 &5145221030280541553
 MonoBehaviour:
@@ -153,7 +154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.29, y: 0.47}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -177,3 +178,22 @@ MonoBehaviour:
   speed: 0.1
   playerInRange: 0
   player: {fileID: 0}
+--- !u!95 &6216179732492765605
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5145221030280541554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 525d61b786d3ba544967abc25ae5a0d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -21,6 +21,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Walls"))
         {
+            //destroy this object hitting walls
             Destroy(gameObject);
         }
         else if (other.gameObject.CompareTag("Knight") && Input.GetAxis("Jump") > 0)
@@ -37,8 +38,9 @@ public class EnemyProjectile : MonoBehaviour
         }
         else
         {
+            //somehow triggered while hitting enemies - enemy friendly fire
             Destroy(other.gameObject);
-            SceneManager.LoadScene(5);
+            //SceneManager.LoadScene(5);
             Destroy(gameObject);
         }
     }

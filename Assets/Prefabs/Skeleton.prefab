@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6308035189785252075}
   - component: {fileID: 2545413372048246907}
   - component: {fileID: 6248167872022458113}
+  - component: {fileID: 3821371349343414978}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -121,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.2, y: 0.2}
+  m_Offset: {x: -0.011841297, y: -0.011841297}
+  m_Size: {x: 0.25751495, y: 0.36577892}
   m_Direction: 0
 --- !u!114 &6308035189785252075
 MonoBehaviour:
@@ -177,3 +178,22 @@ MonoBehaviour:
   speed: 0.1
   playerInRange: 0
   player: {fileID: 0}
+--- !u!95 &3821371349343414978
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308035189785252072}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8342c16de081d14469ace271f7b760d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
