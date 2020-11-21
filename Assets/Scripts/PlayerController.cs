@@ -12,13 +12,19 @@ public class PlayerController : MonoBehaviour
     //Private Variables
     private Rigidbody2D rBody;
     private Animator anim;
-    private bool hasEntered=false;
+    private bool hasEnteredBerserk=false;
+    private bool hasEnteredRoll = false;
     private float initPos = 0.0f;
     private float finPos = 0.0f;
-    private bool coolDown=true;
+    private bool coolDownBerserk=false;
+    private bool coolDownRoll = false;
     private bool roll = false;
     private bool shield = false;
-    private int counterCoolDown = 100;
+    private bool berserk = false;
+    private int counterCoolDown = 1000;
+    private int counterCoolDownRoll = 100;
+    private int counterTillCoolDownBeserk = 0;
+    private int counterTillCoolDownRoll = 0;
 
 
 
@@ -41,22 +47,75 @@ public class PlayerController : MonoBehaviour
        float horiz = Input.GetAxis("Horizontal");
        float verti = Input.GetAxis("Vertical");
         ///////////////////////////////////////////////cool down rutine
-        if (counterCoolDown >= 100 && coolDown==false)
+        if (counterCoolDown >= 1000 && coolDownBerserk == false) //COOLDOWN BERSERK
         {
-            coolDown = true;
+            coolDownBerserk = true;
+            counterCoolDown = 0;
+            counterTillCoolDownBeserk = 0;
+            
 
         }
-        else if (counterCoolDown > 130)
+        //////////////////////////////////////////////
+
+        if (counterCoolDownRoll >= 200 && coolDownRoll == false) //COOLDOWN ROLL
         {
-            counterCoolDown = 0;
-            coolDown = false;
-            roll = false;
+            coolDownRoll = true;
+            counterCoolDownRoll = 0;
+            
+            counterTillCoolDownRoll = 0;
+
         }
-        else
+
+
+
+
+        ///////////////////////////////////////////////
+        if (hasEnteredBerserk == true)
+        {
+            counterTillCoolDownBeserk++;
+            
+            counterCoolDown = 0;
+            
+        }
+
+
+        if (hasEnteredRoll == true)
+        {
+           
+            counterTillCoolDownRoll++;
+            ;
+            counterCoolDownRoll = 0;
+        }
+        //////////////////////////////////////////////
+        ///
+
+        if (counterTillCoolDownBeserk>=300)
         {
             counterCoolDown++;
+
+            coolDownBerserk = false;
+            hasEnteredBerserk = false;
+            
+            berserk = false;
         }
-        ///////////////////////////////////////////////
+        else
+            coolDownBerserk = true;
+
+
+        //////////////////////////////////////////
+
+        if ( counterTillCoolDownRoll >= 50)
+        {
+            
+            counterCoolDownRoll++;
+            coolDownRoll = false;
+            hasEnteredRoll = false;
+            roll = false;
+            
+        }
+        else
+            coolDownRoll = true;
+        ///////////////////////////////////////////
 
         if (gameObject.CompareTag("Knight") && Input.GetAxis("Jump") > 0)
         {
@@ -64,27 +123,47 @@ public class PlayerController : MonoBehaviour
             //stop movement
             rBody.velocity = new Vector2(horiz * 0, verti * 0);
             rBody.constraints = RigidbodyConstraints2D.FreezeAll; //so the enemy don´t drag player around
-            shield = true;
+            shield = true;// activates shield animation
         }
 
         else if(gameObject.CompareTag("Barbarian") && Input.GetAxis("Jump") > 0)
         {
             //******Probitional condition just to make sure code enters this else if statement*****
-            rBody.velocity = new Vector2(horiz * 0, verti * 0);
+            
+
+            if (coolDownBerserk == true) //logic to cool down the use of the roll and Berserk
+            {
+
+                //move quickly towards current direction
+                hasEnteredBerserk = true; //begins duration of attack berserk
+                
+                berserk = true; //activates animation
+            }
+            else
+            {
+                
+                //coolDown = false;
+                berserk = false;
+
+            }
+
+
+            
         }
         else if(gameObject.CompareTag("Rogue") && Input.GetAxis("Jump") > 0 /*&& coolDown*/)
         {
-            if(coolDown==true && counterCoolDown < 130) //logic to cool down the use of the roll
+            if(coolDownRoll == true /*&& counterCoolDown < 130*/) //logic to cool down the use of the roll
             {
                 //do not destroy player
                 //move quickly towards current direction
+                hasEnteredRoll = true; //begins duration of roll
                 rBody.velocity = new Vector2(horiz * (speed * 2), verti * (speed * 2));
-                roll = true;
+                roll = true; // activates Roll Animation
             }
             else
             {
                 rBody.velocity = new Vector2(horiz * speed, verti * speed);
-                coolDown = false;
+                //coolDown = false;
                 roll = false;
 
             }
@@ -105,9 +184,9 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("xVelocity",(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);
         anim.SetBool("Attack", Input.GetMouseButtonDown(0));
-        //anim.SetFloat("Roll", Input.GetAxis("Jump"));
         anim.SetBool("Roll", roll);
         anim.SetBool("Shield", shield);
+        anim.SetBool("Berserk", berserk);
 
     }
 }
