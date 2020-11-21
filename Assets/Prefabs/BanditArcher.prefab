@@ -210,7 +210,7 @@ MonoBehaviour:
   projectileP: {fileID: 8417103517475003540, guid: 8591f1c60a5998945ac6ec718c2e5300, type: 3}
   player: {fileID: 0}
   playerInRange: 0
-  speed: 1.74
+  speed: 4
   reloadtime: 0.8
 --- !u!95 &358135165347623416
 Animator:

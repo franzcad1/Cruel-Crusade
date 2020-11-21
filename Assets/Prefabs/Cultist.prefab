@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c7df4358ff4614e84079f98781045c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.01
   playerInRange: 0
   player: {fileID: 0}
 --- !u!95 &7077268537665421710
@@ -215,8 +215,8 @@ MonoBehaviour:
   projectileP: {fileID: 8762275028461712084, guid: 4b689671f0997f5499a5ea9963ec624a, type: 3}
   player: {fileID: 0}
   playerInRange: 0
-  speed: 3
-  reloadtime: 0.7
+  speed: 5
+  reloadtime: 0.2
 --- !u!1 &1458286701674031312
 GameObject:
   m_ObjectHideFlags: 0
