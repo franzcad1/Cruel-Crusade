@@ -213,9 +213,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4482254328529882454}
   aoeP: {fileID: 8717414371101601506, guid: cc4050b99e513244c907f1dedab08ac0, type: 3}
-  aoeSpread: 1
-  density: 3
-  interval: 2
+  aoeSpread: 2
+  density: 1
+  interval: 0.3
 --- !u!1 &8521241457064863568
 GameObject:
   m_ObjectHideFlags: 0
