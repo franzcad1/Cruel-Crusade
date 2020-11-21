@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3682284391903764622}
   - component: {fileID: 3682284391903764620}
   - component: {fileID: 3682284391903764617}
-  - component: {fileID: 8593906406098607186}
   - component: {fileID: 5171154135273502745}
+  - component: {fileID: 3613379089632321379}
+  - component: {fileID: 8567063085547432295}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Enemy
@@ -136,21 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fb89f4e63171840ad73a6340766a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8593906406098607186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3682284391903764618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c7df4358ff4614e84079f98781045c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  playerInRange: 0
-  player: {fileID: 0}
 --- !u!61 &5171154135273502745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,5 +161,39 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2082367, y: 1.2202563}
+  m_Size: {x: 1.1, y: 1.1}
   m_EdgeRadius: 0
+--- !u!114 &3613379089632321379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682284391903764618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c7df4358ff4614e84079f98781045c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.05
+  playerInRange: 0
+  player: {fileID: 0}
+--- !u!95 &8567063085547432295
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682284391903764618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87ac214809334724caeda7acf6c8dfba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -26,6 +26,30 @@ TextureImporter:
   - first:
       213: -7147833611898934691
     second: daemon_7
+  - first:
+      213: 31655712973597058
+    second: daemon_0
+  - first:
+      213: 5903772917427566892
+    second: daemon_1
+  - first:
+      213: -624436001853406833
+    second: daemon_2
+  - first:
+      213: -7079143110823292868
+    second: daemon_3
+  - first:
+      213: 4848311288957188239
+    second: daemon_4
+  - first:
+      213: 7340418197387877721
+    second: daemon_5
+  - first:
+      213: 5560231159060483460
+    second: daemon_6
+  - first:
+      213: 3740142596158893174
+    second: daemon_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -140,9 +164,9 @@ TextureImporter:
       name: daemon_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 46
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54b44e7ea143326c0800000000000000
-      internalID: -4169431539850654907
+      spriteID: 28927e604b6707000800000000000000
+      internalID: 31655712973597058
       vertices: []
       indices: 
       edges: []
@@ -161,9 +185,9 @@ TextureImporter:
       name: daemon_1
       rect:
         serializedVersion: 2
-        x: 55
+        x: 52
         y: 0
-        width: 47
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3998293eba1cf8e00800000000000000
-      internalID: 1049270182202214803
+      spriteID: c2977d9503a6ee150800000000000000
+      internalID: 5903772917427566892
       vertices: []
       indices: 
       edges: []
@@ -182,9 +206,9 @@ TextureImporter:
       name: daemon_2
       rect:
         serializedVersion: 2
-        x: 105
+        x: 104
         y: 0
-        width: 51
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,8 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 318b58b93b7303400800000000000000
-      internalID: 301802419581728787
+      spriteID: f810094c3ce8557f0800000000000000
+      internalID: -624436001853406833
       vertices: []
       indices: 
       edges: []
@@ -203,9 +227,9 @@ TextureImporter:
       name: daemon_3
       rect:
         serializedVersion: 2
-        x: 162
+        x: 156
         y: 0
-        width: 39
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -214,8 +238,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4aea85b9f5e8e600800000000000000
-      internalID: 497900619479837260
+      spriteID: c30593df8d4d1cd90800000000000000
+      internalID: -7079143110823292868
       vertices: []
       indices: 
       edges: []
@@ -224,9 +248,9 @@ TextureImporter:
       name: daemon_4
       rect:
         serializedVersion: 2
-        x: 210
+        x: 208
         y: 0
-        width: 47
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -235,8 +259,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edcb0b70eb1d88cb0800000000000000
-      internalID: -4861405183643435810
+      spriteID: f883fca0e69a84340800000000000000
+      internalID: 4848311288957188239
       vertices: []
       indices: 
       edges: []
@@ -245,9 +269,9 @@ TextureImporter:
       name: daemon_5
       rect:
         serializedVersion: 2
-        x: 262
+        x: 260
         y: 0
-        width: 47
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,8 +280,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b85c73c9fc61515c0800000000000000
-      internalID: -4245461992791882357
+      spriteID: 95d1e1695776ed560800000000000000
+      internalID: 7340418197387877721
       vertices: []
       indices: 
       edges: []
@@ -268,7 +292,7 @@ TextureImporter:
         serializedVersion: 2
         x: 312
         y: 0
-        width: 51
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -277,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e271602936056a0800000000000000
-      internalID: -6462555986458104178
+      spriteID: 48dcbd0a7c8e92d40800000000000000
+      internalID: 5560231159060483460
       vertices: []
       indices: 
       edges: []
@@ -287,9 +311,9 @@ TextureImporter:
       name: daemon_7
       rect:
         serializedVersion: 2
-        x: 374
+        x: 364
         y: 0
-        width: 39
+        width: 52
         height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -298,8 +322,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5aaa29633bcdcc90800000000000000
-      internalID: -7147833611898934691
+      spriteID: 67cab5500e7a7e330800000000000000
+      internalID: 3740142596158893174
       vertices: []
       indices: 
       edges: []
