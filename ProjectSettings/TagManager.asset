@@ -10,6 +10,8 @@ TagManager:
   - Rogue
   - Barbarian
   - Boss
+  - BootsUI
+  - CloakUI
   layers:
   - Default
   - TransparentFX

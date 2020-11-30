@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     // "Public" variables
 
     [SerializeField] private float speed = 10.0f;
+    [SerializeField] private GameObject boots;
+    [SerializeField] private GameObject cloak;
 
 
     //Private Variables
@@ -26,13 +28,28 @@ public class PlayerController : MonoBehaviour
     private int counterTillCoolDownBeserk = 0;
     private int counterTillCoolDownRoll = 0;
 
+    //Cloak
+    private Renderer sprite;
+    private Color colorOrig;
+    private Color colorTrans;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        boots = GameObject.FindGameObjectWithTag("BootsUI");
+        boots.gameObject.SetActive(false);
+        cloak = GameObject.Find("Cloak");
+        cloak.gameObject.SetActive(false);
         rBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+
+        sprite = GetComponent<Renderer>();
+        colorOrig = sprite.material.color;
+        colorTrans = new Color(colorOrig.r, colorOrig.g, colorOrig.b, 0.5f);
+
     }
 
     // Update is called once per frame
@@ -188,5 +205,18 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("Shield", shield);
         anim.SetBool("Berserk", berserk);
 
+    }
+
+    public void equipBoots()
+    {
+        boots.SetActive(true);
+        this.speed += 1.5f;
+    }
+
+    public void equipCloak()
+    {
+        //make player untargetable by enemies
+        cloak.SetActive(true);
+        sprite.material.color = colorTrans;
     }
 }

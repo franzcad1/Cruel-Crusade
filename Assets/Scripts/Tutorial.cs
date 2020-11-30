@@ -6,6 +6,7 @@ public class Tutorial : MonoBehaviour
 {
     [SerializeField] private GameObject wasd;
     [SerializeField] private GameObject mouse;
+    [SerializeField] private GameObject space;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Tutorial : MonoBehaviour
       
             wasd.SetActive(false);
             mouse.SetActive(false);
+        space.SetActive(false);
 
     }
 }
