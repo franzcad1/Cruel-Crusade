@@ -39,9 +39,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         boots = GameObject.FindGameObjectWithTag("BootsUI");
-        boots.gameObject.SetActive(false);
+        if (boots != null)
+        {
+            boots.gameObject.SetActive(false);
+        }
         cloak = GameObject.Find("Cloak");
-        cloak.gameObject.SetActive(false);
+        if (cloak != null)
+        {
+            cloak.gameObject.SetActive(false);
+        }
         rBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 

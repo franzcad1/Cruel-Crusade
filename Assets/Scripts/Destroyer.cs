@@ -40,7 +40,11 @@ public class Destroyer : MonoBehaviour
         {
             //no enemy friendlyfire
         }
-        else
+        else if (other.gameObject.CompareTag("Timeline"))
+        {
+            //no enemy friendlyfire
+        }
+        else if (other.gameObject.CompareTag("Knight") || other.gameObject.CompareTag("Rogue") || other.gameObject.CompareTag("Barbarian"))
         {
             Destroy(other.gameObject);
             SceneManager.LoadScene(5);     

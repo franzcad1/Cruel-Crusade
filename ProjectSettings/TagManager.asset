@@ -12,6 +12,8 @@ TagManager:
   - Boss
   - BootsUI
   - CloakUI
+  - Timeline
+  - Beholder
   layers:
   - Default
   - TransparentFX
