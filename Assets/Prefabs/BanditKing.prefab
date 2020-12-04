@@ -180,6 +180,7 @@ MonoBehaviour:
   speed: 0.1
   playerInRange: 0
   player: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!95 &5945920119988403172
 Animator:
   serializedVersion: 3

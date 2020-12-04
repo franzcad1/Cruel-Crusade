@@ -12,6 +12,7 @@ public class ThiefController : MonoBehaviour
     private float initialx;
     [SerializeField] private bool playerInRange = false;
     [SerializeField] private GameObject player;
+    [SerializeField] private Animator animator;
 
 
 
@@ -24,6 +25,12 @@ public class ThiefController : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         initialx = rBody.position.x;
+        animator.SetFloat("MoveX", rBody.velocity.x);
+        animator.SetFloat("MoveY", rBody.velocity.y);
+        if (rBody.velocity.y == 0)
+            animator.SetBool("IsMovingY", false);
+        else
+            animator.SetBool("IsMovingY", true);
         if (GameObject.FindGameObjectWithTag("Knight") != null)
         {
             player = GameObject.FindGameObjectWithTag("Knight");

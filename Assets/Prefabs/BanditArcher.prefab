@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814490723004232075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -0.033, z: 0}
+  m_LocalPosition: {x: 0.18, y: -0.059, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7239437105927686945}
@@ -185,7 +185,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.57, y: 0.57}
+    oldSize: {x: 0.285, y: 0.285}
     newSize: {x: 0.57, y: 0.57}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   projectileP: {fileID: 8417103517475003540, guid: 8591f1c60a5998945ac6ec718c2e5300, type: 3}
   player: {fileID: 0}
   playerInRange: 0
+  animator: {fileID: 358135165347623416}
   speed: 4
   reloadtime: 0.8
 --- !u!95 &358135165347623416
@@ -222,7 +223,7 @@ Animator:
   m_GameObject: {fileID: 7239437105927686948}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae9f10dff5068d84b914892272db4de5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

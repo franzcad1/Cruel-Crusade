@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject projectileP;
     [SerializeField] private GameObject player;
     [SerializeField] private bool playerInRange = false;
+    [SerializeField] private Animator animator;
 
     public float speed = 5f;
     public float reloadtime = 2f;
@@ -44,7 +45,10 @@ public class Shoot : MonoBehaviour
             direction.Normalize();
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.Euler(Vector3.forward * (angle));
+            animator.SetBool("IsFiring", true);
         }
+        else
+            animator.SetBool("IsFiring", false);
     }
 
     void Fire()
