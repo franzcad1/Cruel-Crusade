@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 78e187ba9fb471848b355335dd0edc12
+guid: bcd6dbb347505a84c978da951397c19d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7852470446585872443
-    second: flameball-32x32_0
+      213: -2126246720042785711
+    second: blood_0
   - first:
-      213: 8454980816318888078
-    second: flameball-32x32_1
+      213: -174042169833062346
+    second: blood_1
   - first:
-      213: 7272843761326123155
-    second: flameball-32x32_2
+      213: 8958670535985375444
+    second: blood_2
   - first:
-      213: -6216025182875540051
-    second: flameball-32x32_3
+      213: 4711116328407865328
+    second: blood_3
+  - first:
+      213: -6004163327790186300
+    second: blood_4
+  - first:
+      213: 2106409558847724506
+    second: blood_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: flameball-32x32_0
+      name: blood_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cffef5abbb660390800000000000000
-      internalID: -7852470446585872443
+      spriteID: 154a20b9fdd0e72e0800000000000000
+      internalID: -2126246720042785711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flameball-32x32_1
+      name: blood_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 512
         y: 0
-        width: 32
-        height: 32
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e88fd6b8140265570800000000000000
-      internalID: 8454980816318888078
+      spriteID: 6308923919da59df0800000000000000
+      internalID: -174042169833062346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flameball-32x32_2
+      name: blood_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 1024
         y: 0
-        width: 32
-        height: 32
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39862c42ed45ee460800000000000000
-      internalID: 7272843761326123155
+      spriteID: 4d8aa2d2367935c70800000000000000
+      internalID: 8958670535985375444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flameball-32x32_3
+      name: blood_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 1536
         y: 0
-        width: 32
-        height: 32
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,8 +208,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da522d3b70e3cb9a0800000000000000
-      internalID: -6216025182875540051
+      spriteID: 0f71b42175f316140800000000000000
+      internalID: 4711116328407865328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c083a9c34decaca0800000000000000
+      internalID: -6004163327790186300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb1b9265587b3d10800000000000000
+      internalID: 2106409558847724506
       vertices: []
       indices: 
       edges: []
