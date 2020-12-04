@@ -16,15 +16,15 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
+        //Updated upstream
         if (enemy != null && Input.GetMouseButtonDown(0))
         {
             Destroy(enemy);
-=======
+        }
         if (Input.GetMouseButtonDown(0))
         {
             sword.Play();
->>>>>>> Stashed changes
+
         }
     }
 
@@ -32,9 +32,9 @@ public class Attack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && !collision.isTrigger)
         {
-<<<<<<< Updated upstream
+
             enemy = collision.gameObject;
-=======
+
             
             if (Input.GetAxis("Jump") > 0 && collision.gameObject.CompareTag("Knight"))
             {
@@ -47,19 +47,19 @@ public class Attack : MonoBehaviour
                 Destroy(collision.gameObject);
             }
             
->>>>>>> Stashed changes
+
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && !collision.isTrigger)
         {
-<<<<<<< Updated upstream
+
             enemy = collision.gameObject;
-=======
+
             
             Destroy(collision.gameObject);
->>>>>>> Stashed changes
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
