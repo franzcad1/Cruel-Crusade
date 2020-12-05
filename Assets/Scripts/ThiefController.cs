@@ -12,7 +12,9 @@ public class ThiefController : MonoBehaviour
     private float initialx;
     [SerializeField] private bool playerInRange = false;
     [SerializeField] private GameObject player;
+    [SerializeField] private MonoBehaviour AOEscript;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource sound;
 
 
 
@@ -25,12 +27,6 @@ public class ThiefController : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         initialx = rBody.position.x;
-        animator.SetFloat("MoveX", rBody.velocity.x);
-        animator.SetFloat("MoveY", rBody.velocity.y);
-        if (rBody.velocity.y == 0)
-            animator.SetBool("IsMovingY", false);
-        else
-            animator.SetBool("IsMovingY", true);
         if (GameObject.FindGameObjectWithTag("Knight") != null)
         {
             player = GameObject.FindGameObjectWithTag("Knight");
@@ -62,6 +58,13 @@ public class ThiefController : MonoBehaviour
         //{
         //    dirRight = true;
         //}
+        animator.SetFloat("MoveX", rBody.velocity.x);
+        animator.SetFloat("MoveY", rBody.velocity.y);
+        if (rBody.velocity.y == 0)
+            animator.SetBool("IsMovingY", false);
+        else
+            animator.SetBool("IsMovingY", true);
+
         if (player == null)
         {
             if (GameObject.FindGameObjectWithTag("Knight") != null)
@@ -77,9 +80,17 @@ public class ThiefController : MonoBehaviour
                 player = GameObject.FindGameObjectWithTag("Barbarian");
             }
         }
+
         if (playerInRange)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed);
+            sound.enabled = true;
+            AOEscript.enabled = true;
+        }
+        else
+        {
+            sound.enabled = false;
+            AOEscript.enabled = false;
         }
     }
 

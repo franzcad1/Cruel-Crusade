@@ -9,6 +9,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private bool playerInRange = false;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource sound;
 
     public float speed = 5f;
     public float reloadtime = 2f;
@@ -46,9 +47,13 @@ public class Shoot : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.Euler(Vector3.forward * (angle));
             animator.SetBool("IsFiring", true);
+            sound.enabled = true;
         }
         else
+        {
             animator.SetBool("IsFiring", false);
+            sound.enabled = false;
+        }
     }
 
     void Fire()
