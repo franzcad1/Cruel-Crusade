@@ -183,6 +183,7 @@ MonoBehaviour:
   speed: 0.01
   playerInRange: 0
   player: {fileID: 0}
+  AOEscript: {fileID: 0}
   animator: {fileID: 0}
   sound: {fileID: 3810920833991286089}
 --- !u!95 &7077268537665421710
@@ -220,7 +221,7 @@ MonoBehaviour:
   projectileP: {fileID: 8762275028461712084, guid: 4b689671f0997f5499a5ea9963ec624a, type: 3}
   player: {fileID: 0}
   playerInRange: 0
-  animator: {fileID: 0}
+  animator: {fileID: 7077268537665421710}
   sound: {fileID: 0}
   speed: 4
   reloadtime: 0.4

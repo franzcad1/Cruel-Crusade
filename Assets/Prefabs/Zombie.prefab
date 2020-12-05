@@ -178,6 +178,9 @@ MonoBehaviour:
   speed: 0.1
   playerInRange: 0
   player: {fileID: 0}
+  AOEscript: {fileID: 0}
+  animator: {fileID: 6216179732492765605}
+  sound: {fileID: 0}
 --- !u!95 &6216179732492765605
 Animator:
   serializedVersion: 3

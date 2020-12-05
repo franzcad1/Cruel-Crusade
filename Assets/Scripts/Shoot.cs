@@ -46,13 +46,25 @@ public class Shoot : MonoBehaviour
             direction.Normalize();
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.Euler(Vector3.forward * (angle));
-            animator.SetBool("IsFiring", true);
-            sound.enabled = true;
+            if (animator != null)
+            {
+                animator.SetBool("IsFiring", true);
+            }
+            if (sound != null)
+            {
+                sound.enabled = true;
+            }
         }
         else
         {
-            animator.SetBool("IsFiring", false);
-            sound.enabled = false;
+            if (animator != null)
+            {
+                animator.SetBool("IsFiring", false);
+            }
+            if (sound != null)
+            {
+                sound.enabled = false;
+            }
         }
     }
 
@@ -80,7 +92,6 @@ public class Shoot : MonoBehaviour
         {
             playerInRange = false;
             CancelInvoke("Fire");
-
         }
     }
 }

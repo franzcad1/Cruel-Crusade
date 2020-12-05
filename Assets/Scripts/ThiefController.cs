@@ -7,7 +7,7 @@ public class ThiefController : MonoBehaviour
     // "Public" variables
 
     //[SerializeField] private bool dirRight = true;
-    [SerializeField] private float speed = 0.05f;
+    [SerializeField] public float speed = 0.05f;
     //[SerializeField] private float distance = 4.0f;
     private float initialx;
     [SerializeField] private bool playerInRange = false;
@@ -58,12 +58,15 @@ public class ThiefController : MonoBehaviour
         //{
         //    dirRight = true;
         //}
-        animator.SetFloat("MoveX", rBody.velocity.x);
-        animator.SetFloat("MoveY", rBody.velocity.y);
-        if (rBody.velocity.y == 0)
-            animator.SetBool("IsMovingY", false);
-        else
-            animator.SetBool("IsMovingY", true);
+        if (animator != null)
+        {
+            animator.SetFloat("MoveX", rBody.velocity.x);
+            animator.SetFloat("MoveY", rBody.velocity.y);
+            if (rBody.velocity.y == 0)
+                animator.SetBool("IsMovingY", false);
+            else
+                animator.SetBool("IsMovingY", true);
+        }
 
         if (player == null)
         {
@@ -84,13 +87,25 @@ public class ThiefController : MonoBehaviour
         if (playerInRange)
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed);
-            sound.enabled = true;
-            AOEscript.enabled = true;
+            if (sound != null)
+            {
+                sound.enabled = true;
+            }
+            if (AOEscript != null)
+            {
+                AOEscript.enabled = true;
+            }
         }
         else
         {
-            sound.enabled = false;
-            AOEscript.enabled = false;
+            if (sound != null)
+            {
+                sound.enabled = false;
+            }
+            if (AOEscript != null)
+            {
+                AOEscript.enabled = false;
+            }
         }
     }
 
